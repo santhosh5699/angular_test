@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular-Routing!</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+	<script src="angular-route.min.js"></script>
+	<script src="controller.js"></script>
+</head>
+<body ng-app="myApp">
+
+
+
+<div ng-controller="people">
+	<ul>
+		<h2>Details of programmers: </h2>
+			<li ng-repeat="person in persons | filter:globalSearch">
+				{{ 'Name : '+person.Name +'   Age : ' + person.Age
+				+'  Color  : '+person.Color}}
+			</li>
+	</ul>
+</div>
+
+<div id='searchboxes'>
+	Global Search Filter : <input type="text" ng-model="globalSearch.$"><br>
+	Name Search Filter : <input type="text" ng-model="globalSearch.Name"><br>
+	Age Search Filter : <input type="text" ng-model="globalSearch.Age"><br>
+	Color Search Filter : <input type="text" ng-model="globalSearch.Color"><br>
+
+</body>
+</html>

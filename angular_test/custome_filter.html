@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular JS: Custom Filter</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+	<script src="custom_filteranddirective.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="customcontroller">
+	Number: <input type="text" ng-model="number"><br><br>
+	Base: <input type="text" ng-model="baseNumber"><br><br>
+
+	Number {{number}} of base {{baseNumber}} is {{ number | base:baseNumber }}
+	
+	<p>The Variable name is {{ name1 }}</p>
+	<p>The Variable age is {{ age }}</p>
+	<input type="button" value="From controller" ng-click = "alertName()">
+
+	<div my-first-directive name1="{{name1}}" age="age" func="alertName()"></div>
+</body>
+</html>

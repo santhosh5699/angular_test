@@ -1,0 +1,31 @@
+{
+	"records":[
+		{
+			"Name":"Ram",
+			"Age":"24",
+			"Color":"Black"
+		},
+
+		{
+			"Name":"Rahim",
+			"Age":"23",
+			"Color":"Blue"
+		},
+
+		{
+			"Name":"Robert",
+			"Age":"25",
+			"Color":"Red"
+		},
+		{
+			"Name":"Santhosh",
+			"Age":"24",
+			"Color":"Blue"
+		},
+		{
+			"Name":"Hacker",
+			"Age":"35",
+			"Color":"Red"
+		}
+	]
+}

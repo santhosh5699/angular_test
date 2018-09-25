@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang=en ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular JS !hands on</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+</head>
+<body>
+	<input type="text" ng-model="name">
+	<div>Hello {{name}}</div>
+	<div ng-bind="name"></div>
+	<div ng-init="language='Angular JS'">
+		{{language}}<br>
+		Your preferred language: <input type="text" ng-model="language">
+	</div>
+	
+	<div ng-init="myFavLan=[{name:'PHP',extension:'.php'},{name:'Javascript',extension:'.js'},
+	{name:'Ruby',extension:'.rb'},{name:'C++',extension:'.cpp'}]">
+
+	<p ng-repeat="language in myFavLan">
+		Name: {{language.name}}<br>
+		Extension: {{language.extension}}
+	</p>
+	</div>
+
+	<div ng-controller="languages">
+		<button ng-click=php()>PHP</button>
+		<button ng-click=javascript()>Javascript</button>
+		<button ng-click=ruby()>Ruby</button>
+		<button ng-click=cpp()>C++</button>
+	
+		<p> You have selected: {{ myFavLan }}</p>
+	</div>
+	<script>
+			var application=angular.module('myApp',[]);
+
+			application.controller("languages",function($scope){
+			$scope.myFavLan='none';
+
+			$scope.php=function(){
+				$scope.myFavLan='PHP';
+			};
+
+			$scope.javascript=function(){
+				$scope.myFavLan='Javascript';
+			};
+
+			$scope.ruby=function(){
+				$scope.myFavLan='Ruby';
+			};
+
+			$scope.cpp=function(){
+				$scope.myFavLan='C++';
+
+			};
+
+		});
+
+	</script>
+
+	<div>
+		Currency: <input type="text" ng-model="price"><br>
+		Value: {{ price | currency:'Rs. ':3 }}
+	</div>
+
+	<div ng-include="'login.html'"></div>
+
+</body>
+</html>
